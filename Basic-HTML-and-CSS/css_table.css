@@ -1,0 +1,14 @@
+table {
+	border: 3px solid #cd7f32;
+}
+tr {
+	background-color: #53682A;
+	color: #cd7f32;
+}
+tr, th {
+	font-size: larger;
+}
+tr:hover {
+	background-color: #808000;
+	color: #d4a96b;
+}

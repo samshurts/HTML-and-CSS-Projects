@@ -1,0 +1,12 @@
+.my_font {
+	background: papayawhip;
+	color: teal;
+	text-align: center;
+	font-weight: bold;
+	font-size: 32px;
+	text-shadow: 1.5px 1.5px 2px gray;
+}
+.bold_text {
+	font-weight: bold;
+	font-size: 18px;
+}
