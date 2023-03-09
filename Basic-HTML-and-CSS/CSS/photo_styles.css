@@ -1,4 +1,4 @@
-/* GALLERY SECTION STYLE AND ANIMATION */
+/* GALLERY STYLES */
 p {
     font-weight: 300;
     line-height: 30px;
@@ -51,7 +51,7 @@ p {
     padding-bottom: 20px;
 }
 
-/* PHOTO OVERLAY TRANSITIONS */
+/* PHOTO ANIMATIONS */
 .photo-overlay {
     opacity: 0;
     transition: opacity .1s;
