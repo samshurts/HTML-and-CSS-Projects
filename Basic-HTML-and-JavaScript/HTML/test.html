@@ -1,7 +1,35 @@
 <!DOCTYPE HTML>
 
 <html>
+<body>
+
+    <p id="display"></p>
+    <p id="display2"></p>
+    <p id="display3"></p>
+    
+    <script src="../JavaScript/test.js"></script>
+
+    <p>Enter seconds:</p>
+    <input id="seconds" value="">
+    <button onclick="countdown()">Click</button>
+    <p id="timer"></p>
+
     <script>
-        document.write("Hello, world!")
+        function countdown() {
+            var seconds = document.getElementById("seconds").value;
+
+            function tick() {
+                seconds = seconds - 1;
+                timer.innerHTML = seconds;
+                var TO = setTimeout(tick, 1000);
+                if (seconds == -1) {
+                    alert("Time's up!");
+                    clearTimeout(TO);
+                }
+            }
+            tick();
+        }
     </script>
+
+</body>
 </html>
