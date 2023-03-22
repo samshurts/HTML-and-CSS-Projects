@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { IProduct } from "./product";
 
 @Component({
     selector: "pm-products",
@@ -6,7 +7,11 @@ import { Component } from "@angular/core";
 })
 export class ProductListComponent {
     pageTitle: string = "Product List";
-    products: any[] = [
+    imageWidth: number = 50;
+    imageMargin: number = 2;
+    showImage: boolean = false;
+    listFilter: string = "cart";
+    products: IProduct[] = [
         {
             "productId": 2,
             "productName": "Garden Cart",
@@ -28,4 +33,8 @@ export class ProductListComponent {
             "imageUrl": "assets/images/hammer.png"
         }
     ];
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
