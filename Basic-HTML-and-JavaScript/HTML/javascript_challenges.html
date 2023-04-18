@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Basic HTML Template</title>
+    <link rel="stylesheet" type="text/css" href="../css/FILENAME.css">
+    <script src="../JavaScript/FILENAME.js"></script>
+
+    <style>
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            opacity: 1;
+            transition: 1s opacity;
+        }
+
+        body.fade-out {
+            opacity: 0;
+            transition: none;
+        }
+
+        #myForm {
+            display: none;
+        }
+
+        .animated-square {
+            width: 100px;
+            height: 100px;
+            background-color: darkblue;
+            position: relative;
+            animation: shift 6s;
+        }
+
+        @keyframes shift {
+            0% {top: 0px; background-color: darkblue; width: 100px;}
+            50% {top: 200px; background-color: aqua; width: 300px;}
+            100% {top: 0px; background-color: darkblue; width: 100px;}
+        }
+
+        .zoomed-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            animation: zoom-in-out 6s;
+        }
+
+        @keyframes zoom-in-out {
+            0% {transform: scale(1,1);}
+            50% {transform: scale(1.2,1.2);}
+            100% {transform: scale(1,1);}
+        }
+
+        .fancy-button {
+            background-color: darkslategray;
+            border: none;
+            color: white;
+            padding: 24px 48px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .sticky {
+            position: sticky;
+            bottom: 0;
+            float: right;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        document.body.classList.add("fade-out");
+        window.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.remove("fade-out");
+        });
+
+        function validateForm() {
+            let fname = document.forms["form1"]["fname"].value;
+            console.log(document.forms["form1"]["fname"].value);
+            let lname = document.forms["form1"]["lname"].value;
+            console.log(document.forms["form1"]["lname"].value);
+            let phone = document.forms["form1"]["phone"].value;
+            console.log(document.forms["form1"]["phone"].value);
+
+            if ( (fname == "") || (lname == "") || (phone == "") ) {
+                alert("All form fields must be filled in!");
+                return false;
+            }
+        };
+    </script>
+
+    <a href="#link">Click me!</a>
+
+    <h1 style="font-size: 4vw;";>Responsive Heading</h1>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+
+    <form name="form1" id="myForm" action="" onsubmit="return validateForm()" method="post">
+        <label for="fname">First name:</label>
+        <input type="text" name="fname"><br>
+        <label for="lname">Last name:</label>
+        <input type="text" name="lname"><br>
+        <label for="phone">Phone #:</label>
+        <input type="tel" name="phone" placeholder="000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br>
+        <input type="submit" value="Submit"><br>
+        <button type="button" class="close-form" onclick="closeForm()">Close Form</button>
+    </form>
+
+    <button id="open-button" onclick="openForm()">Open Form</button>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            document.getElementById("open-button").style.display = "none";
+        };
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("open-button").style.display = "block";
+        };
+    </script>
+
+    <br>
+    <br>
+    <div class="animated-square"></div>
+
+    <br>
+    <br>
+    <img class="zoomed-image" src="../Images/luna.jpg" alt="luna" height="25%" width="25%">
+
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+    <p style="font-size: 2vw;">Responsive paragraph</p>
+
+    <a href="#" class="fancy-button sticky">Top</a>
+
+    <p style="font-size: 20px;">:3</p>
+    <p id="link" style="font-size: 20px;">:3</p>
+
+</body>
+
+</html>
