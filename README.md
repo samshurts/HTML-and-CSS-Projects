@@ -1,6 +1,6 @@
 # HTML-and-CSS-Projects
 
-## Website Projects Contained in this Repository
+## Website and Web Application Projects
 - The Flying City Resort Site
 - Academy Cinemas Site
 - Acme Product Management App
